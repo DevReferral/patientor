@@ -1,18 +1,17 @@
-import { Patient } from "../../types"
+import React, { useState } from 'react'
+import { Patient } from '../../types'
+import PatientDetails from './PatientDetails'
 
-const PatientDetails = (patient:Patient) => {
-  
-  
+const PatientPage = () => {
+   
+  const[patient,setPatient] = useState<Patient|null>(null)
+
+   
   return (
     <>
-      <h2>{patient.name}</h2>
-
-      {patient.ssn ? <h3>`ssh:${patient.ssn}`</h3>:'' }
-        <h3>Occupation : {patient.occupation}</h3>  
-
+     <PatientDetails patient={patient}/>
     </>
   )
-
 }
 
-export default PatientDetails
+export default PatientPage
