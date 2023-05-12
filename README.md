@@ -41,4 +41,12 @@
 
 ```
 
-_So the function setPatients has type `React.Dispatch<React.SetStateAction<Patient[]>>`. We can see the type in the editor when we hover over the function:_
+---
+
+_So the function `setPatients` has type `React.Dispatch<React.SetStateAction<Patient[]>>`_   
+
+_We can see the type in the editor when we hover over the function :_
+
+![Set State Props](./pics/setStateProps.png "the return type")
+
+Always refer to _**[React Typescript CheatSheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example/#basic-prop-types-examples "React Typescript CheatSheet")**_, to find out about the types in react , if ever confused.
