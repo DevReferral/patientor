@@ -3,13 +3,11 @@ import FemaleIcon from '@mui/icons-material/Female';
 import MaleIcon from '@mui/icons-material/Male';
 import { Patient } from "../../types";
 interface PropTypes{
-  patient:Patient|null
+  patient:Patient
 }
 
 const PatientDetails = ({patient}:PropTypes) => {
 
-  
-  if(!patient) return<h1>Loading... </h1>
   
   return (
     <>
