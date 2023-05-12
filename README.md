@@ -11,5 +11,7 @@
 6. Start the application and click around to verify you have a functional development environment.
 
 
-> The more code you read, the better you will be at understanding it. 
-> You will most likely read far more code than you are going to produce throughout your life.
+> The more code you read, the better you will be at understanding it
+> You will most likely read far more code than you are going to produce throughout your life
+
+
