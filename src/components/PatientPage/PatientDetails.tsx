@@ -3,11 +3,13 @@ import FemaleIcon from '@mui/icons-material/Female';
 import MaleIcon from '@mui/icons-material/Male';
 import { Patient } from "../../types";
 interface PropTypes{
-  patient:Patient
+  patient:Patient|null
 }
 
 const PatientDetails = ({patient}:PropTypes) => {
-  
+   
+  if(patient===null) return <></>;
+
   return (
     <>
       <h2>{patient.name} {patient.gender==='male'?<MaleIcon/>:<FemaleIcon/>}</h2>
