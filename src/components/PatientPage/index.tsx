@@ -2,6 +2,7 @@ import { Patient } from "../../types"
 
 const PatientDetails = (patient:Patient) => {
   
+  
   return (
     <>
       <h2>{patient.name}</h2>
@@ -11,7 +12,7 @@ const PatientDetails = (patient:Patient) => {
 
     </>
   )
-  
+
 }
 
 export default PatientDetails
