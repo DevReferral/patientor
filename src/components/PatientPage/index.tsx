@@ -1,5 +1,5 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import patients from '../../services/patients'
 import { Patient } from '../../types'
@@ -14,7 +14,6 @@ const PatientPage = () => {
 
   const [error,setError] = useState('')
   
-
   const setErrorMessageWithTimeout = (errorMessage: string, timeout_in_ms: number) => {
  
     setError(errorMessage);
@@ -44,6 +43,8 @@ const PatientPage = () => {
    
   return (
     <>
+     {error && <div style={{border:"1rem red solid"}}>{error}</div>}
+     
      <PatientDetails patient={patient}/>
     </>
   )
