@@ -14,7 +14,7 @@ const PatientPage = () => {
 
   const [error,setError] = useState('')
   
-  
+
   const setErrorMessageWithTimeout = (errorMessage: string, timeout_in_ms: number) => {
  
     setError(errorMessage);
