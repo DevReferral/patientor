@@ -12,9 +12,9 @@ const PatientDetails = ({patient}:PropTypes) => {
   
   return (
     <>
-      <h2>{patient.name}</h2>
+      <h2>{patient.name} {patient.gender==='male'?<></>:<></>}</h2>
 
-      {patient.ssn ? <h3>`ssh:${patient.ssn}`</h3>:'' }
+      {patient.ssn ? <h3>{`ssn : ${patient.ssn}`}</h3>:'' }
         <h3>Occupation : {patient.occupation}</h3>  
 
     </>
