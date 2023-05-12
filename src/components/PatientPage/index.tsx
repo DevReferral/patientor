@@ -38,14 +38,13 @@ const PatientPage = () => {
           
         })
     }
-
   },[id])
    
   return (
     <>
      {error && <div style={{border:"1rem red solid"}}>{error}</div>}
      
-     {patient ? <PatientDetails patient={patient}/>:<div>Loading...</div> }
+     {patient ? <PatientDetails patient={patient}/>:<h2>Loading...</h2> }
      
      
     </>
