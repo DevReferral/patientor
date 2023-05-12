@@ -7,7 +7,6 @@ interface PropTypes{
 }
 
 const PatientDetails = ({patient}:PropTypes) => {
-
   
   return (
     <>

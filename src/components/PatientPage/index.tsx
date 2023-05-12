@@ -45,7 +45,9 @@ const PatientPage = () => {
     <>
      {error && <div style={{border:"1rem red solid"}}>{error}</div>}
      
-     {patient && <PatientDetails patient={patient}/> }
+     {patient ? <PatientDetails patient={patient}/>:<div>Loading...</div> }
+     
+     
     </>
   )
 }
