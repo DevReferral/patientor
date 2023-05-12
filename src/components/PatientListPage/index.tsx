@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Box, Table, Button, TableHead, Typography, TableCell, TableRow, TableBody } from '@mui/material';
+import { Box, Button, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@mui/material';
 import axios from 'axios';
+import { useState } from "react";
 
-import { PatientFormValues, Patient } from "../../types";
+import { Patient, PatientFormValues } from "../../types";
 import AddPatientModal from "../AddPatientModal";
 
 import HealthRatingBar from "../HealthRatingBar";
@@ -29,6 +29,7 @@ const PatientListPage = ({ patients, setPatients } : Props ) => {
   const submitNewPatient = async (values: PatientFormValues) => {
     try {
       const patient = await patientService.create(values);
+      console.log("Created New Patient at backend :",JSON.stringify(patient,null,2));
       setPatients(patients.concat(patient));
       setModalOpen(false);
     } catch (e: unknown) {
