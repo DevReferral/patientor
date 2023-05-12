@@ -1,42 +1,15 @@
-# Patientor - frontend
+# Patentior Typescript React Frontend 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+**What to do when you dive into an old project at a company or an open-source project ?**
 
-In the project directory, you can run:
+1. Start your research by reading the `README.md` in the root of the repository.
+2. Take a peek at the `package.json`.
+3. Try looking for `types.ts` or something similar to get started.
+4. Browse the folder structure to get some insight into the application's functionality and/or the architecture used.
+5. If the project has unit, integration or end-to-end tests, reading those is most likely beneficial.
+6. Start the application and click around to verify you have a functional development environment.
 
-### `npm install`
 
-Install the project dependencies.
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-[React TypeScript cheetseat](https://react-typescript-cheatsheet.netlify.app/)
+> The more code you read, the better you will be at understanding it. 
+> You will most likely read far more code than you are going to produce throughout your life.
