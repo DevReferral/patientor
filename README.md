@@ -15,3 +15,30 @@
 > You will most likely read far more code than you are going to produce throughout your life
 
 
+## Setting the Prop Types for components using the setState() as a function
+
+```javascript
+     const [patients, setPatients] = useState<Patient[]>([]);
+
+     // passed to :
+  
+     <PatientListPage
+                patients={patients}
+                setPatients={setPatients}
+              />
+
+    // Prop Types of PatientListPage
+
+    interface Props {
+      patients : Patient[]
+      setPatients: React.Dispatch<React.SetStateAction<Patient[]>>
+    }
+    
+    const PatientListPage = ({ patients, setPatients } : Props ) => { 
+      // ...
+    }
+
+
+```
+
+_So the function setPatients has type `React.Dispatch<React.SetStateAction<Patient[]>>`. We can see the type in the editor when we hover over the function:_
