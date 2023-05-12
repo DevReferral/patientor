@@ -29,7 +29,9 @@ const PatientListPage = ({ patients, setPatients } : Props ) => {
   const submitNewPatient = async (values: PatientFormValues) => {
     try {
       const patient = await patientService.create(values);
-      console.log("Created New Patient at backend :",JSON.stringify(patient,null,2));
+     
+      console.info("Created New Patient at backend :",JSON.stringify(patient,null,2));
+
       setPatients(patients.concat(patient));
       setModalOpen(false);
     } catch (e: unknown) {
