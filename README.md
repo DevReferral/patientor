@@ -49,4 +49,6 @@ _We can see the type in the editor when we hover over the function :_
 
 ![Set State Props](./pics/setStateProps.png "the return type")
 
-Always refer to _**[React Typescript CheatSheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example/#basic-prop-types-examples "React Typescript CheatSheet")**_, to find out about the types in react , if ever confused.
+Always refer to _**[React Typescript CheatSheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example/#basic-prop-types-examples "React Typescript CheatSheet")**_.   
+
+It has a pretty nice list of typical prop types, where we can seek for help if finding the proper typing for props is not obvious.
