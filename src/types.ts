@@ -33,7 +33,7 @@ export interface BaseDiagnosisEntry {
   // the diagnosis code is based on the `code` attribute
   // from the Diagnosis type
 }
-interface Hospital extends BaseDiagnosisEntry {
+export interface Hospital extends BaseDiagnosisEntry {
   type: 'Hospital';
   discharge?: {
     date: string;
@@ -41,7 +41,7 @@ interface Hospital extends BaseDiagnosisEntry {
   };
 }
 
-interface OccupationalHealthcare extends BaseDiagnosisEntry {
+export interface OccupationalHealthcare extends BaseDiagnosisEntry {
   type: 'OccupationalHealthcare';
   employerName: string;
   sickLeave?: {
@@ -50,7 +50,7 @@ interface OccupationalHealthcare extends BaseDiagnosisEntry {
   };
 }
 
-interface HealthCheck extends BaseDiagnosisEntry {
+export interface HealthCheck extends BaseDiagnosisEntry {
   type: 'HealthCheck';
   healthCheckRating: HealthCheckRating;
 }
