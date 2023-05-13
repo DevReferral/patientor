@@ -47,6 +47,7 @@ const PatientPage = () => {
      
      <PatientDetails patient={patient}/>
      
+     
   
     </>
   )
