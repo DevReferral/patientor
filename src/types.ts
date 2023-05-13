@@ -17,9 +17,10 @@ export interface Patient {
   gender: Gender;
   ssn?: string;
   dateOfBirth?: string;
+  entries:Array<DiagnosisEntry>
 }
 
-export type PatientFormValues = Omit<Patient, "id">;
+export type PatientFormValues = Omit<Patient, "id"|"entries">;
 
 //--
 
@@ -61,5 +62,6 @@ export enum HealthCheckRating{
   "CriticalRisk" = 3
 }
 
+export type PatientWithoutEntries= Omit<Patient,'entries'>
 
 export type DiagnosisEntry = Hospital | OccupationalHealthcare| HealthCheck;

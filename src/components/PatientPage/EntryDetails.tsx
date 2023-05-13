@@ -11,7 +11,7 @@ const EntryDetails = ({entry}:{entry:DiagnosisEntry}) => {
 
     case "HealthCheck":
       details =<>
-      
+       <div> Health Check Rating :{entry.healthCheckRating}</div>
       </>
     break;
     case "Hospital":
