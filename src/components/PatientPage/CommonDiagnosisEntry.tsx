@@ -11,7 +11,7 @@ const CommonDiagnosisEntry = ({entry}:{entry:BaseDiagnosisEntry}) => {
        diagnosisService
        .getAll()
        .then((data) =>  setDiagnosis(data))
-       .catch((error) =>  alert("Count not fetch diagnosis codes"+error.message));
+       .catch((error) =>  console.error("Count not fetch diagnosis codes : "+error.message));
       
     })
   
