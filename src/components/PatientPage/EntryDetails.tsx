@@ -6,7 +6,7 @@ import CommonDiagnosisEntry from './CommonDiagnosisEntry';
 const EntryDetails = ({entry}:{entry:DiagnosisEntry}) => {
    
    let details =null
-
+ try{
    switch (entry.type) {
 
     case "HealthCheck":
@@ -46,6 +46,21 @@ const EntryDetails = ({entry}:{entry:DiagnosisEntry}) => {
        <hr/>
     </>
   )
+ }
+ catch(err) {
+    let errorMessage="Error : "
+    if(err instanceof Error ) 
+      errorMessage+=err.message;
+    else 
+      errorMessage+=" Unknown Error : "+JSON.stringify(err,null,2);
+   console.log(`Error: ${errorMessage}`)
+    return (
+      <li>
+        <h2>Entries Cannot Be Displayed Due to an Error !</h2>
+      </li>
+    );
+  }
+
 }
 
 export default EntryDetails
