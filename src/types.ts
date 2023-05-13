@@ -62,6 +62,7 @@ export enum HealthCheckRating{
   "CriticalRisk" = 3
 }
 
-export type PatientWithoutEntries= Omit<Patient,'entries'>
+export interface PatientWithoutEntries extends Omit<Patient, 'entries'> {}
+
 
 export type DiagnosisEntry = Hospital | OccupationalHealthcare| HealthCheck;
