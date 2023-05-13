@@ -14,9 +14,6 @@ const CommonDiagnosisEntry = ({entry}:{entry:BaseDiagnosisEntry}) => {
        .catch((error) =>  alert("Count not fetch diagnosis codes"+error.message));
       
     })
-
-
-
   
  
   return (
@@ -28,7 +25,9 @@ const CommonDiagnosisEntry = ({entry}:{entry:BaseDiagnosisEntry}) => {
       <ul>
       {entry.diagnosisCodes?.map(code =>
      
-      <li key={code}>{code} : { <DisplayDiagnosisDescription code={code} diagnosis={diagnosis}/>}</li> )}
+      <li key={code}>{code} : { 
+      <DisplayDiagnosisDescription code={code} diagnosis={diagnosis}/>}</li> )
+      }
      
       </ul>
     </div>

@@ -42,11 +42,10 @@ const EntryDetails = ({entry}:{entry:DiagnosisEntry}) => {
     }
     
     return (
-      <>
+      <div style={{ borderRadius:"1rem",border:"black solid 0.2rem",padding:"1rem",margin:"1rem"}}>
         <CommonDiagnosisEntry entry={entry}/>
         {details}
-        <hr/>
-      </>
+      </div>
     )
   }
   catch(err) {

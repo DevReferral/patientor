@@ -18,6 +18,7 @@ const PatientDetails = ({patient}:PropTypes) => {
       {patient.ssn ? <h3>{`ssn : ${patient.ssn}`}</h3>:'' }
         <h3>Occupation : {patient.occupation}</h3>  
       <hr/>
+      <h3 style={{fontFamily:"sans-serif"}}>Entries:</h3>
       {patient.entries.map(e =><EntryDetails entry={e}/>)}
     </>
   )
