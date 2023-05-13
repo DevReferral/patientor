@@ -15,10 +15,25 @@ const EntryDetails = ({entry}:{entry:DiagnosisEntry}) => {
       </>
     break;
     case "Hospital":
-      details = <> </>
+      details = <>
+       {entry.discharge && (<>
+          <div>Date of Discharge :{entry.discharge.date}</div>
+          <div>Criteria for Discharge :{entry.discharge.criteria}</div>
+       </>)}
+      </>
       break;
     case "OccupationalHealthcare":
-      details = <> </>
+      details = <> 
+      
+      <div>Employer : {entry.employerName}</div>
+      {entry.sickLeave && 
+       <div>
+         start date: {entry.sickLeave.startDate} <br/>
+         end date: {entry.sickLeave.endDate}
+        </div>
+        }
+  
+      </>
       break;
     default:
      return  assertNever(entry)
