@@ -43,6 +43,7 @@ const EntryDetails = ({entry}:{entry:DiagnosisEntry}) => {
     <>
        <CommonDiagnosisEntry entry={entry}/>
        {details}
+       <hr/>
     </>
   )
 }
