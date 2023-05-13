@@ -23,10 +23,10 @@ const CommonDiagnosisEntry = ({entry}:{entry:BaseDiagnosisEntry}) => {
     <div>
     
       <div>date: {entry.date}</div>
-      <div> description: {entry.description} </div>
+      <div>description: {entry.description} </div>
       <div>specialist: {entry.specialist}</div> 
       <ul>
-      {entry?.diagnosisCodes?.map(code =>
+      {entry.diagnosisCodes?.map(code =>
      
       <li key={code}>{code} : { <DisplayDiagnosisDescription code={code} diagnosis={diagnosis}/>}</li> )}
      
