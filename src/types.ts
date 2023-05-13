@@ -23,7 +23,7 @@ export type PatientFormValues = Omit<Patient, "id">;
 
 //--
 
-interface BaseDiagnosisEntry {
+export interface BaseDiagnosisEntry {
   id: string;
   description: string;
   date: string;
@@ -60,5 +60,6 @@ export enum HealthCheckRating{
   "HighRisk" = 2,
   "CriticalRisk" = 3
 }
+
 
 export type DiagnosisEntry = Hospital | OccupationalHealthcare| HealthCheck;

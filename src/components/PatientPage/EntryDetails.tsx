@@ -1,12 +1,16 @@
-import React from 'react';
+
 import { DiagnosisEntry } from '../../types';
+import CommonDiagnosisEntry from './CommonDiagnosisEntry';
 
-const EntryDetails = (entry:DiagnosisEntry) => {
+const EntryDetails = ({entry}:{entry:DiagnosisEntry}) => {
    
-  let details =null;
-
+   let details =null
+  
   return (
-    <div>EntryDetails</div>
+    <>
+       <CommonDiagnosisEntry entry={entry}/>
+       {details}
+    </>
   )
 }
 
