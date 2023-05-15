@@ -1,4 +1,4 @@
-import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+import { Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import React, { useState } from 'react'
 import { DiagnosisEntry } from '../../types'
 
@@ -8,29 +8,31 @@ const DiagnosisEntryForm = () => {
   
   const types:DiagnosisEntry['type'][] = ['HealthCheck','Hospital','OccupationalHealthcare']
   
+ const handleChange = (event: SelectChangeEvent) => {
+  
+    console.log(event.target.value);
+  };
+  
   return (
     <div style={{border:"0.2rem black dashed",padding:"1rem"}}>
-     <h2>New {entryType} Entry</h2>
-
-      {
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+      <div>
+           <InputLabel id="demo-simple-select-label">Select Entry Type</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          // value={age}
-          label="Age"
-          // onChange={handleChange}
+          value={entryType}
+          label="DiagnosisType"
+          onChange={handleChange}
         >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-    </Box>
 
-      }
+           {types.map((type) => (<MenuItem value={type}>{type}</MenuItem>))}
+        
+        </Select>
+
+      </div>
+     <h2>New {entryType} Entry</h2>
+
+
 
     </div>
   )
