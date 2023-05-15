@@ -2,11 +2,11 @@ import React from 'react'
 import { DiagnosisEntry } from '../../../types'
 interface PropTypes{
    
-   entry: Partial<DiagnosisEntry>,
-   setEntry: React.Dispatch<React.SetStateAction<Partial<DiagnosisEntry>>>
+   formEntry: Partial<DiagnosisEntry>,
+   setFormEntry: React.Dispatch<React.SetStateAction<Partial<DiagnosisEntry>>>
 
 }
-const HospitalEntry = ({entry,setEntry}:PropTypes) => {
+const HospitalEntry = ({formEntry,setFormEntry}:PropTypes) => {
   return (
     <div>HospitalEntry</div>
   )

@@ -1,11 +1,9 @@
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import { DiagnosisEntry } from '../../../types'
-import { assertNever } from '../../../utils'
 import CommonEntry from './CommonEntry'
-import HealthCheckEntry from './HealthCheckEntry'
-import HospitalEntry from './HospitalEntry'
-import OccupationalHealthCareEntry from './OccupationalHealthCareEntry'
+
+import OptionalDiagnosisEntry from './OptionalDiagnosisEntry'
 
 const DiagnosisEntryForm = () => {
 
@@ -15,22 +13,8 @@ const DiagnosisEntryForm = () => {
   
   const handleChange = (event: SelectChangeEvent) =>setEntryType(event.target.value as DiagnosisEntry['type'])
   
-  const [diagnosisFormEntry,setDiagnosisFormEntry] = useState<Partial<DiagnosisEntry>>({});
+  const [formEntry,setFormEntry] = useState<Partial<DiagnosisEntry>>({});
       
-  const getDiagnosisFormEntry = useCallback(() => {
-
-    switch (entryType) {
-      case 'HealthCheck':
-        return <HealthCheckEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
-      case 'Hospital':
-        return <HospitalEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
-      case 'OccupationalHealthcare':
-        return <OccupationalHealthCareEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
-      default:
-        return assertNever(entryType);
-    }
-  }, [entryType, diagnosisFormEntry]);
-
 
   return (
     <>
@@ -50,7 +34,7 @@ const DiagnosisEntryForm = () => {
      
      <h2>New {entryType} Entry</h2>
      <CommonEntry/>
-     { getDiagnosisFormEntry() }
+     <OptionalDiagnosisEntry entryType={entryType} formEntry={formEntry} setFormEntry={setFormEntry}/>
     </div>
     </>
   )
