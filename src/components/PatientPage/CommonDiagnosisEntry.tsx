@@ -4,7 +4,6 @@ import { BaseDiagnosisEntry, Diagnosis } from "../../types";
 const CommonDiagnosisEntry = ({entry}:{entry:BaseDiagnosisEntry}) => {
   
     const[diagnosis,setDiagnosis] =useState<Diagnosis[]>([]);
-
   
     useEffect(() => {
       
