@@ -18,6 +18,7 @@ const DiagnosisEntryForm = () => {
   const [diagnosisFormEntry,setDiagnosisFormEntry] = useState<Partial<DiagnosisEntry>>({});
   
   const getDiagnosisEntry = useCallback((type: DiagnosisEntry['type']) => {
+    console.log(" getDiagnosisEntry  Renders")
     switch (type) {
       case 'HealthCheck':
         return <HealthCheckEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
@@ -51,9 +52,6 @@ const DiagnosisEntryForm = () => {
      {
        getDiagnosisEntry(entryType)
      }
-     {/* {entryType==='HealthCheck' ? <HealthCheckEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry}/>:''}
-     {entryType==='Hospital' ?<HospitalEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry}/>:''}
-     {entryType==='OccupationalHealthcare'?<OccupationalHealthCareEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry}/>:''} */}
     </div>
     </>
   )
