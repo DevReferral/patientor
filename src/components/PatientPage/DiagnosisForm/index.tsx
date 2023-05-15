@@ -1,6 +1,10 @@
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import { useState } from 'react'
 import { DiagnosisEntry, DiagnosisEntryWithoutId } from '../../../types'
+import CommonEntry from './CommonEntry'
+import HealthCheckEntry from './HealthCheckEntry'
+import HospitalEntry from './HospitalEntry'
+import OccupationalHealthCareEntry from './OccupationalHealthCareEntry'
 
 const DiagnosisEntryForm = () => {
 
@@ -31,10 +35,10 @@ const DiagnosisEntryForm = () => {
     <div style={{border:"0.2rem black dashed",padding:"1rem"}}>
      
      <h2>New {entryType} Entry</h2>
-     {
-     
-     }
-
+     <CommonEntry/>
+     {entryType==='HealthCheck' ? <HealthCheckEntry/>:''}
+     {entryType==='Hospital' ?<HospitalEntry/>:''}
+     {entryType==='OccupationalHealthcare'?<OccupationalHealthCareEntry/>:''}
     </div>
     </>
   )

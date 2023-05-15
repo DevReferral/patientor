@@ -2,7 +2,7 @@
 import FemaleIcon from '@mui/icons-material/Female';
 import MaleIcon from '@mui/icons-material/Male';
 import { Patient } from "../../types";
-import DiagnosisEntryForm from './DiagnosisForm/DiagnosisEntryForm';
+import DiagnosisEntryForm from './DiagnosisForm';
 import DisplayAllEntries from './DisplayAllEntries';
 interface PropTypes{
   patient:Patient|null
