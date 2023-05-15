@@ -18,17 +18,17 @@ const DiagnosisEntryForm = () => {
   const [diagnosisFormEntry,setDiagnosisFormEntry] = useState<Partial<DiagnosisEntry>>({});
   
   const getDiagnosisEntry = useCallback((type: DiagnosisEntry['type']) => {
-  switch (type) {
-    case 'HealthCheck':
-      return <HealthCheckEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
-    case 'Hospital':
-      return <HospitalEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
-    case 'OccupationalHealthcare':
-      return <OccupationalHealthCareEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
-    default:
-      return assertNever(type);
-  }
-}, [diagnosisFormEntry]);
+    switch (type) {
+      case 'HealthCheck':
+        return <HealthCheckEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
+      case 'Hospital':
+        return <HospitalEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
+      case 'OccupationalHealthcare':
+        return <OccupationalHealthCareEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
+      default:
+        return assertNever(type);
+    }
+  }, [diagnosisFormEntry]);
 
   return (
     <>
