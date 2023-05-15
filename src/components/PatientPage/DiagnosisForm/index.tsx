@@ -35,7 +35,7 @@ const DiagnosisEntryForm = () => {
      
      <h2>New {entryType} Entry</h2>
      <CommonEntry/>
-     {entryType==='HealthCheck' ? <HealthCheckEntry/>:''}
+     {entryType==='HealthCheck' ? <HealthCheckEntry setDiagnosisFormEntry={setDiagnosisFormEntry}/>:''}
      {entryType==='Hospital' ?<HospitalEntry/>:''}
      {entryType==='OccupationalHealthcare'?<OccupationalHealthCareEntry/>:''}
     </div>
