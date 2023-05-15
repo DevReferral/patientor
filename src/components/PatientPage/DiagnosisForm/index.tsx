@@ -1,6 +1,6 @@
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
-import { useCallback, useMemo, useState } from 'react'
-import { DiagnosisEntry, DiagnosisEntryWithoutId } from '../../../types'
+import { useMemo, useState } from 'react'
+import { DiagnosisEntry } from '../../../types'
 import { assertNever } from '../../../utils'
 import CommonEntry from './CommonEntry'
 import HealthCheckEntry from './HealthCheckEntry'
@@ -16,20 +16,20 @@ const DiagnosisEntryForm = () => {
   const handleChange = (event: SelectChangeEvent) =>setEntryType(event.target.value as DiagnosisEntry['type'])
   
   const [diagnosisFormEntry,setDiagnosisFormEntry] = useState<Partial<DiagnosisEntry>>({});
-  
-  const getDiagnosisEntry = useCallback((type: DiagnosisEntry['type']) => {
-    console.log(" getDiagnosisEntry  Renders")
-    switch (type) {
-      case 'HealthCheck':
-        return <HealthCheckEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
-      case 'Hospital':
-        return <HospitalEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
-      case 'OccupationalHealthcare':
-        return <OccupationalHealthCareEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
-      default:
-        return assertNever(type);
-    }
-  }, [diagnosisFormEntry]);
+      
+  const DiagnosisEntry = useMemo(() => {
+      console.log('getDiagnosisEntry Renders');
+      switch (entryType) {
+        case 'HealthCheck':
+          return <HealthCheckEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
+        case 'Hospital':
+          return <HospitalEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
+        case 'OccupationalHealthcare':
+          return <OccupationalHealthCareEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
+        default:
+          return assertNever(entryType);
+      }
+    }, [entryType, diagnosisFormEntry]);
 
   return (
     <>
@@ -49,9 +49,7 @@ const DiagnosisEntryForm = () => {
      
      <h2>New {entryType} Entry</h2>
      <CommonEntry/>
-     {
-       getDiagnosisEntry(entryType)
-     }
+     { DiagnosisEntry }
     </div>
     </>
   )
