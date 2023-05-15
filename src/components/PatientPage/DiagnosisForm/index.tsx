@@ -28,7 +28,7 @@ const DiagnosisEntryForm = () => {
     default:
       return assertNever(type);
   }
-}, [entryType]);
+}, [diagnosisFormEntry]);
 
   return (
     <>
