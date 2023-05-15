@@ -16,7 +16,6 @@ const DiagnosisEntryForm = () => {
   
   const [diagnosisFormEntry,setDiagnosisFormEntry] = useState<Partial<DiagnosisEntry>>({});
  
-  
 
   return (
     <>
