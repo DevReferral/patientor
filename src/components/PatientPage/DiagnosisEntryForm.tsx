@@ -1,6 +1,6 @@
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import { useState } from 'react'
-import { DiagnosisEntry } from '../../types'
+import { DiagnosisEntry, DiagnosisEntryWithoutId } from '../../types'
 
 const DiagnosisEntryForm = () => {
 
@@ -9,8 +9,9 @@ const DiagnosisEntryForm = () => {
   const types:DiagnosisEntry['type'][] = ['HealthCheck','Hospital','OccupationalHealthcare']
   
   const handleChange = (event: SelectChangeEvent) =>setEntryType(event.target.value as DiagnosisEntry['type'])
- 
   
+  const [diagnosisFormEntry,setDiagnosisFormEntry] = useState<DiagnosisEntryWithoutId|null>(null);
+
   return (
     <>
      <div style={{margin:"1rem 1rem 0 0 "}}>
