@@ -8,10 +8,8 @@ const DiagnosisEntryForm = () => {
   
   const types:DiagnosisEntry['type'][] = ['HealthCheck','Hospital','OccupationalHealthcare']
   
-  const handleChange = (event: SelectChangeEvent) => {
-    
-      setEntryType(event.target.value as DiagnosisEntry['type'])
-    };
+  const handleChange = (event: SelectChangeEvent) =>setEntryType(event.target.value as DiagnosisEntry['type'])
+ 
   
   return (
     <>
@@ -30,6 +28,7 @@ const DiagnosisEntryForm = () => {
     <div style={{border:"0.2rem black dashed",padding:"1rem"}}>
      
      <h2>New {entryType} Entry</h2>
+     
 
     </div>
     </>
