@@ -1,5 +1,5 @@
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { DiagnosisEntry } from '../../types'
 
 const DiagnosisEntryForm = () => {
@@ -21,11 +21,10 @@ const DiagnosisEntryForm = () => {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={entryType}
-          label="DiagnosisType"
           onChange={handleChange}
         >
 
-           {types.map((type) => (<MenuItem value={type}>{type}</MenuItem>))}
+           {types.map((type) => (<MenuItem key={type} value={type}>{type}</MenuItem>))}
         
         </Select>
        
