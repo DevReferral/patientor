@@ -1,6 +1,6 @@
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import { useState } from 'react'
-import { DiagnosisEntry, DiagnosisEntryWithoutId } from '../../types'
+import { DiagnosisEntry, DiagnosisEntryWithoutId } from '../../../types'
 
 const DiagnosisEntryForm = () => {
 
@@ -31,7 +31,9 @@ const DiagnosisEntryForm = () => {
     <div style={{border:"0.2rem black dashed",padding:"1rem"}}>
      
      <h2>New {entryType} Entry</h2>
+     {
      
+     }
 
     </div>
     </>
