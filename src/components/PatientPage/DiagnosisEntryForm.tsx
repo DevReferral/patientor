@@ -14,8 +14,8 @@ const DiagnosisEntryForm = () => {
   };
   
   return (
-    <div style={{border:"0.2rem black dashed",padding:"1rem"}}>
-      <div>
+    <>
+     <div style={{margin:"1rem"}}>
            <InputLabel id="demo-simple-select-label">Select Entry Type</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -28,13 +28,15 @@ const DiagnosisEntryForm = () => {
            {types.map((type) => (<MenuItem value={type}>{type}</MenuItem>))}
         
         </Select>
-
+       
       </div>
+      <hr/>
+    <div style={{border:"0.2rem black dashed",padding:"1rem"}}>
+     
      <h2>New {entryType} Entry</h2>
 
-
-
     </div>
+    </>
   )
 }
 
