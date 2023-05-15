@@ -1,5 +1,5 @@
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
-import { useMemo, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { DiagnosisEntry } from '../../../types'
 import { assertNever } from '../../../utils'
 import CommonEntry from './CommonEntry'
@@ -17,19 +17,20 @@ const DiagnosisEntryForm = () => {
   
   const [diagnosisFormEntry,setDiagnosisFormEntry] = useState<Partial<DiagnosisEntry>>({});
       
-  const DiagnosisEntry = useMemo(() => {
-      console.log('getDiagnosisEntry Renders');
-      switch (entryType) {
-        case 'HealthCheck':
-          return <HealthCheckEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
-        case 'Hospital':
-          return <HospitalEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
-        case 'OccupationalHealthcare':
-          return <OccupationalHealthCareEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
-        default:
-          return assertNever(entryType);
-      }
-    }, [entryType, diagnosisFormEntry]);
+  const getDiagnosisFormEntry = useCallback(() => {
+
+    switch (entryType) {
+      case 'HealthCheck':
+        return <HealthCheckEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
+      case 'Hospital':
+        return <HospitalEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
+      case 'OccupationalHealthcare':
+        return <OccupationalHealthCareEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
+      default:
+        return assertNever(entryType);
+    }
+  }, [entryType, diagnosisFormEntry]);
+
 
   return (
     <>
@@ -49,7 +50,7 @@ const DiagnosisEntryForm = () => {
      
      <h2>New {entryType} Entry</h2>
      <CommonEntry/>
-     { DiagnosisEntry }
+     { getDiagnosisFormEntry() }
     </div>
     </>
   )
