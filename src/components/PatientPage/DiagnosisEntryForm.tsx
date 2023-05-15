@@ -8,9 +8,13 @@ const DiagnosisEntryForm = () => {
   const types:DiagnosisEntry['type'][] = ['HealthCheck','Hospital','OccupationalHealthcare']
   
   return (
-    <div>
+    <div style={{border:"0.2rem black dashed",padding:"1rem"}}>
      <h2>New {entryType} Entry</h2>
 
+      {
+
+
+      }
 
     </div>
   )
