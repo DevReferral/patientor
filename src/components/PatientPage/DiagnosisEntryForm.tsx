@@ -10,7 +10,7 @@ const DiagnosisEntryForm = () => {
   
  const handleChange = (event: SelectChangeEvent) => {
   
-    console.log(event.target.value);
+    setEntryType(event.target.value as DiagnosisEntry['type'])
   };
   
   return (
