@@ -15,7 +15,7 @@ const DiagnosisEntryForm = () => {
   
   return (
     <>
-     <div style={{margin:"1rem"}}>
+     <div style={{margin:"1rem 1rem 0 0 "}}>
            <InputLabel id="demo-simple-select-label">Select Entry Type</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -23,11 +23,8 @@ const DiagnosisEntryForm = () => {
           value={entryType}
           onChange={handleChange}
         >
-
-           {types.map((type) => (<MenuItem key={type} value={type}>{type}</MenuItem>))}
-        
+           {types.map((type) => (<MenuItem key={type} value={type}>{type}</MenuItem>))}       
         </Select>
-       
       </div>
       <hr/>
     <div style={{border:"0.2rem black dashed",padding:"1rem"}}>
