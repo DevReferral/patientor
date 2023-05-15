@@ -1,6 +1,7 @@
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
-import { useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { DiagnosisEntry, DiagnosisEntryWithoutId } from '../../../types'
+import { assertNever } from '../../../utils'
 import CommonEntry from './CommonEntry'
 import HealthCheckEntry from './HealthCheckEntry'
 import HospitalEntry from './HospitalEntry'
@@ -15,7 +16,19 @@ const DiagnosisEntryForm = () => {
   const handleChange = (event: SelectChangeEvent) =>setEntryType(event.target.value as DiagnosisEntry['type'])
   
   const [diagnosisFormEntry,setDiagnosisFormEntry] = useState<Partial<DiagnosisEntry>>({});
- 
+  
+  const getDiagnosisEntry = useCallback((type: DiagnosisEntry['type']) => {
+  switch (type) {
+    case 'HealthCheck':
+      return <HealthCheckEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
+    case 'Hospital':
+      return <HospitalEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
+    case 'OccupationalHealthcare':
+      return <OccupationalHealthCareEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry} />;
+    default:
+      return assertNever(type);
+  }
+}, [entryType]);
 
   return (
     <>
@@ -35,12 +48,17 @@ const DiagnosisEntryForm = () => {
      
      <h2>New {entryType} Entry</h2>
      <CommonEntry/>
-     {entryType==='HealthCheck' ? <HealthCheckEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry}/>:''}
+     {
+       getDiagnosisEntry(entryType)
+     }
+     {/* {entryType==='HealthCheck' ? <HealthCheckEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry}/>:''}
      {entryType==='Hospital' ?<HospitalEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry}/>:''}
-     {entryType==='OccupationalHealthcare'?<OccupationalHealthCareEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry}/>:''}
+     {entryType==='OccupationalHealthcare'?<OccupationalHealthCareEntry entry={diagnosisFormEntry} setEntry={setDiagnosisFormEntry}/>:''} */}
     </div>
     </>
   )
 }
+
+
 
 export default DiagnosisEntryForm
