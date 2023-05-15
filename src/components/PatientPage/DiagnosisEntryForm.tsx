@@ -10,7 +10,9 @@ const DiagnosisEntryForm = () => {
   
   const handleChange = (event: SelectChangeEvent) =>setEntryType(event.target.value as DiagnosisEntry['type'])
   
-  const [diagnosisFormEntry,setDiagnosisFormEntry] = useState<DiagnosisEntryWithoutId|null>(null);
+  const [diagnosisFormEntry,setDiagnosisFormEntry] = useState<Partial<DiagnosisEntry>>({});
+ 
+  
 
   return (
     <>
