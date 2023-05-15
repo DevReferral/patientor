@@ -13,7 +13,7 @@ const CommonDiagnosisEntry = ({entry}:{entry:BaseDiagnosisEntry}) => {
        .then((data) =>  setDiagnosis(data))
        .catch((error) =>  console.error("Count not fetch diagnosis codes : "+error.message));
       
-    })
+    },[]);
   
  
   return (
