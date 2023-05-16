@@ -20,24 +20,28 @@ const CommonEntry = ({formEntry,setFormEntry}:PropTypes) => {
 
  }
 
-  return (
- <div style={styles.inputForm}>
-  <label htmlFor='description'>Description:</label>
-  <input
-    type='text'
-    id='description'
-    value={formEntry.description}
-    onChange={({ target }) => {
-      setFormEntry(state => ({ ...state, description: target.value }))
-    }}
-  />
-  <label htmlFor='date'>Date:</label>
-  <input type='date' id='date' defaultValue={new Date().toISOString().slice(0, 10)} />
 
-  <label htmlFor='specialist'>Specialist : </label>
-  <input id="specialist" type="text"/>
-</div>
-  )
+function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+  const { name, value } = event.target;
+  setFormEntry(prevForm =>({...prevForm, [name]:value}));
+}
+
+return(
+  <div style={styles.inputForm} onChange={handleInputChange}>
+      <label htmlFor='description'>Description:</label>
+      <input
+        type='text'
+        id='description'
+        name='description'
+        value={formEntry.description}
+      />
+      <label htmlFor='date'>Date:</label>
+      <input name="date" type='date' id='date' defaultValue={new Date().toISOString().slice(0, 10)} />
+
+      <label htmlFor='specialist'>Specialist : </label>
+      <input name="specialist" id="specialist" type="text" value={formEntry.specialist}/>
+  </div>
+)
 }
 
 export default CommonEntry
