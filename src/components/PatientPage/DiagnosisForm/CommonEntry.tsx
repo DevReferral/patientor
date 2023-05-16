@@ -33,6 +33,9 @@ const CommonEntry = ({formEntry,setFormEntry}:PropTypes) => {
   />
   <label htmlFor='date'>Date:</label>
   <input type='date' id='date' defaultValue={new Date().toISOString().slice(0, 10)} />
+
+  <label htmlFor='specialist'>Specialist : </label>
+  <input id="specialist" type="text"/>
 </div>
   )
 }
