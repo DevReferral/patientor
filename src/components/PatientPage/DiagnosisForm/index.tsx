@@ -34,8 +34,8 @@ const DiagnosisEntryForm = () => {
      
      <h2>New {entryType} Entry</h2>
      <CommonEntry  
-     formEntry={formEntry} 
-      setFormEntry={setFormEntry}/>
+       formEntry={formEntry} 
+       setFormEntry={setFormEntry}/>
       
      <OptionalDiagnosisEntry
       entryType={entryType} 

@@ -33,6 +33,10 @@ export interface BaseDiagnosisEntry {
   // the diagnosis code is based on the `code` attribute
   // from the Diagnosis type
 }
+
+export type BaseDiagnosisEntryWithoutId= Omit<BaseDiagnosisEntry,"id">;
+
+
 export interface Hospital extends BaseDiagnosisEntry {
   type: 'Hospital';
   discharge?: {

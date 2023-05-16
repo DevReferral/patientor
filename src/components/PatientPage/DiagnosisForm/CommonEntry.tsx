@@ -1,8 +1,8 @@
 import React from 'react';
-import { DiagnosisEntry } from '../../../types';
+import { DiagnosisEntry, DiagnosisEntryWithoutId } from '../../../types';
 interface PropTypes{
   
-  formEntry:Partial<DiagnosisEntry>,
+  formEntry:Partial<DiagnosisEntryWithoutId>,
   setFormEntry:React.Dispatch<React.SetStateAction<Partial<DiagnosisEntry>>>
 }
 const CommonEntry = ({formEntry,setFormEntry}:PropTypes) => {
