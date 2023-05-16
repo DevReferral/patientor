@@ -11,7 +11,7 @@ const CommonEntry = ({formEntry,setFormEntry}:PropTypes) => {
 
  const styles={
   
-  inputForm:{ width:"50%", 
+  inputForm:{ width:"40%", 
   display: 'grid',
    gridTemplateColumns: '0.5fr 1fr', 
    gap: '1rem', 
