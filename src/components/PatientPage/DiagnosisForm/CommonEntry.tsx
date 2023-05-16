@@ -11,10 +11,12 @@ const CommonEntry = ({formEntry,setFormEntry}:PropTypes) => {
 
   return (
    <>
-    <input type='text' 
+  <label htmlFor='description' >Description:</label>  
+  <input type='text' 
+    id='description'
     value={formEntry.description} 
     onChange={({target})=>{setFormEntry(state => ({...state,description:target.value}))}}/>
-   
+  <hr/>
    </>
   )
 }
