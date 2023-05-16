@@ -1,8 +1,8 @@
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import { FormEvent, useState } from 'react'
-import { DiagnosisEntry } from '../../../types'
+import patients from '../../../services/patients'
+import { DiagnosisEntry, DiagnosisEntryWithoutId } from '../../../types'
 import CommonEntry from './CommonEntry'
-
 import OptionalDiagnosisEntry from './OptionalDiagnosisEntry'
 
 const DiagnosisEntryForm = () => {
@@ -18,6 +18,10 @@ const DiagnosisEntryForm = () => {
   const onFormSubmit = (event: FormEvent) =>{
      event.preventDefault();
      console.log("Form to Submit : ",JSON.stringify(formEntry, null, 2));
+      
+
+     patients.createDiagnosisEntry(formEntry as DiagnosisEntryWithoutId )
+     
   }
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
