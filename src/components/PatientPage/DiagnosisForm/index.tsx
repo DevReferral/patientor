@@ -1,12 +1,14 @@
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
+import axios from 'axios'
 import { FormEvent, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import patients from '../../../services/patients'
 import { DiagnosisEntry, DiagnosisEntryWithoutId } from '../../../types'
+import { getErrorMessage } from '../../../utils'
 import CommonEntry from './CommonEntry'
 import OptionalDiagnosisEntry from './OptionalDiagnosisEntry'
-
 const DiagnosisEntryForm = () => {
-
+  const {id} = useParams()
   const [entryType,setEntryType] =useState<DiagnosisEntry['type']>("HealthCheck")
   
   const types:DiagnosisEntry['type'][] = ['HealthCheck','Hospital','OccupationalHealthcare']
@@ -18,8 +20,18 @@ const DiagnosisEntryForm = () => {
   const onFormSubmit = (event: FormEvent) =>{
      event.preventDefault();
      console.log("Form to Submit : ",JSON.stringify(formEntry, null, 2));
+     if(id){
       
-     patients.createDiagnosisEntry(formEntry as DiagnosisEntryWithoutId )
+      try{
+        
+      patients.createDiagnosisEntry(id,formEntry as DiagnosisEntryWithoutId )
+      
+      }catch(e){
+
+        const message =getErrorMessage(e)
+        alert('The error is: ' +message)
+      }
+     }
      
   }
 
