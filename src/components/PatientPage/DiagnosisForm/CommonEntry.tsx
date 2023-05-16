@@ -1,13 +1,21 @@
 import React from 'react';
-import { DiagnosisEntry, DiagnosisEntryWithoutId } from '../../../types';
+import { BaseDiagnosisEntryWithoutId, DiagnosisEntry } from '../../../types';
 interface PropTypes{
   
-  formEntry:Partial<DiagnosisEntryWithoutId>,
+  formEntry:Partial<BaseDiagnosisEntryWithoutId>,
   setFormEntry:React.Dispatch<React.SetStateAction<Partial<DiagnosisEntry>>>
 }
 const CommonEntry = ({formEntry,setFormEntry}:PropTypes) => {
+   
+ console.log("The form entry is ",JSON.stringify(formEntry,null,2));
+
   return (
-    <div>CommonEntry</div>
+   <>
+    <input type='text' 
+    value={formEntry.description} 
+    onChange={({target})=>{setFormEntry(state => ({...state,description:target.value}))}}/>
+   
+   </>
   )
 }
 
