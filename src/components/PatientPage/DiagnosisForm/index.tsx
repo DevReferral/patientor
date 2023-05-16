@@ -20,17 +20,17 @@ const DiagnosisEntryForm = () => {
   const onFormSubmit = (event: FormEvent) =>{
      event.preventDefault();
      console.log("Form to Submit : ",JSON.stringify(formEntry, null, 2));
+    
      if(id){
-      
-      try{
-        
-      patients.createDiagnosisEntry(id,formEntry as DiagnosisEntryWithoutId )
-      
-      }catch(e){
-
-        const message =getErrorMessage(e)
-        alert('The error is: ' +message)
-      }
+  
+           patients
+           .createDiagnosisEntry(id,formEntry as DiagnosisEntryWithoutId )
+           .catch(err => { console.error("Error while creating Diagnosis")
+                            const message = getErrorMessage(err)
+                            alert('The error is: ' +message)
+                        }
+           )
+  
      }
      
   }
