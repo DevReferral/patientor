@@ -33,7 +33,10 @@ const DiagnosisEntryForm = () => {
     <div style={{border:"0.2rem black dashed",padding:"1rem"}}>
      
      <h2>New {entryType} Entry</h2>
-     <CommonEntry/>
+     <CommonEntry  
+     formEntry={formEntry} 
+      setFormEntry={setFormEntry}/>
+      
      <OptionalDiagnosisEntry
       entryType={entryType} 
       formEntry={formEntry} 
