@@ -20,6 +20,12 @@ const DiagnosisEntryForm = () => {
      console.log("Form to Submit : ",JSON.stringify(formEntry, null, 2));
   }
 
+  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+  const { name, value } = event.target;
+  setFormEntry(prevForm =>({...prevForm, [name]:value}));
+}
+
+
   return (
     <>
     <form onSubmit={onFormSubmit} >
@@ -40,7 +46,7 @@ const DiagnosisEntryForm = () => {
       <h2>New {entryType} Entry</h2>
       <CommonEntry  
         formEntry={formEntry} 
-        setFormEntry={setFormEntry}/>
+        handleInputChange={handleInputChange}/>
         
       <OptionalDiagnosisEntry
         entryType={entryType} 

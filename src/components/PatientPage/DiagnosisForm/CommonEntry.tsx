@@ -1,11 +1,12 @@
+import { Checkbox, InputLabel, ListItemText, MenuItem, OutlinedInput, Select } from '@mui/material';
 import React from 'react';
-import { BaseDiagnosisEntryWithoutId, DiagnosisEntry } from '../../../types';
+import { BaseDiagnosisEntryWithoutId } from '../../../types';
 interface PropTypes{
   
   formEntry:Partial<BaseDiagnosisEntryWithoutId>,
-  setFormEntry:React.Dispatch<React.SetStateAction<Partial<DiagnosisEntry>>>
+  handleInputChange:(event: React.ChangeEvent<HTMLInputElement>)=>void;
 }
-const CommonEntry = ({formEntry,setFormEntry}:PropTypes) => {
+const CommonEntry = ({formEntry,handleInputChange}:PropTypes) => {
    
  console.log("The form entry is ",JSON.stringify(formEntry,null,2));
 
@@ -19,12 +20,6 @@ const CommonEntry = ({formEntry,setFormEntry}:PropTypes) => {
   }
 
  }
-
-
-function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-  const { name, value } = event.target;
-  setFormEntry(prevForm =>({...prevForm, [name]:value}));
-}
 
 return(
   <div style={styles.inputForm} onChange={handleInputChange}>
@@ -40,6 +35,25 @@ return(
 
       <label htmlFor='specialist'>Specialist : </label>
       <input name="specialist" id="specialist" type="text" value={formEntry.specialist}/>
+
+       <InputLabel id="demo-multiple-checkbox-label">Tag</InputLabel>
+        <Select
+          labelId="demo-multiple-checkbox-label"
+          id="demo-multiple-checkbox"
+          multiple
+          value={formEntry.diagnosisCodes??[]}
+          input={<OutlinedInput label="Tag" />}
+          renderValue={(selected) => selected.join(', ')}
+        >
+          {/* {names.map((name) => (
+            <MenuItem key={name} value={name}>
+              <Checkbox 
+              checked={ formEntry.diagnosisCodes ? formEntry.diagnosisCodes.indexOf(name) > -1:false} 
+              />
+              <ListItemText primary={name} />
+            </MenuItem>
+          ))} */}
+        </Select> 
   </div>
 )
 }
