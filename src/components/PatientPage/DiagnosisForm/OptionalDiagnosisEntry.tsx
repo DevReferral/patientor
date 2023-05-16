@@ -12,7 +12,7 @@ interface PropTypes{
 }
 const OptionalDiagnosisEntry = ({entryType,formEntry,setFormEntry}:PropTypes) => {
   
-  const optionalEntry =null
+  const OptionalEntry =null
    
     switch (entryType) {
       case 'HealthCheck':
@@ -26,7 +26,7 @@ const OptionalDiagnosisEntry = ({entryType,formEntry,setFormEntry}:PropTypes) =>
     }
 
   return (
-   optionalEntry
+   OptionalEntry
   )
 }
 
