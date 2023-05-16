@@ -19,7 +19,6 @@ const DiagnosisEntryForm = () => {
      event.preventDefault();
      console.log("Form to Submit : ",JSON.stringify(formEntry, null, 2));
       
-
      patients.createDiagnosisEntry(formEntry as DiagnosisEntryWithoutId )
      
   }
@@ -59,6 +58,7 @@ const DiagnosisEntryForm = () => {
         />
 
       </div>
+      <button type='submit' > Submit Form</button>
     </form>
     </>
   )
