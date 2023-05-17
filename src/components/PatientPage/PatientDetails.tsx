@@ -21,7 +21,7 @@ const PatientDetails = ({patient}:PropTypes) => {
       <h3>Occupation : {patient.occupation}</h3>  
      
       <hr/>
-       <DiagnosisEntryForm/>
+       <DiagnosisEntryForm />
       <hr/>
       <DisplayAllEntries entries={patient.entries} /> 
     </>
